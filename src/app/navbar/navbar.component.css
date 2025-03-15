@@ -1,0 +1,13 @@
+.icons{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+.menu {
+    display: flex; /* Enables Flexbox */
+    gap: 150%;
+    margin-left: 10%;
+    align-items: center; /* Aligns items vertically */
+    justify-content: space-between; /* Spaces items apart */
+    padding: 10px; /* Optional: Adds some spacing */
+}

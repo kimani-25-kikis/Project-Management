@@ -1,0 +1,80 @@
+.dashboard {
+    background: #addceb42;
+    display: flex;
+    gap: 20px;
+}
+.nav{
+    display: flex;
+    flex-direction: row;
+    justify-content:space-between;
+}
+.nav h3{
+    color: rgba(0, 0, 0, 0.8);
+}
+/* 📌 Large Chart Section */
+.chart {
+    width: 65%;
+    height: 100%;
+    position: relative;
+}
+
+/* 📌 Small Stats Charts (Earnings, Clients, Projects, Employees) */
+.stats {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 3px;
+    justify-content:space-between;
+}
+
+.cards{
+    width: 30%;
+}
+
+/* Ensure 2 cards per row */
+.stats .stat-card {
+    width: 48%;  /* Two per row */
+    height: 10%;
+    padding: 2px 0;
+}
+.stats .stat-card h3{
+    color: rgba(0, 0, 0, 0.6);
+}
+/* 📌 Mini Line Graphs inside Stat Cards */
+.stat-card canvas {
+    width: 100% !important;
+    height: 30px !important;
+    margin-top: 5px;
+    padding-bottom: 0 !important;
+}
+.chart .stat-card canvas{
+    width: 100%!important;
+    height: 100% !important;
+    padding: 0;
+
+}
+
+/* 📌 Styling for Download Reports Card */
+.download-card {
+    display: flex;
+    flex-direction: row;
+    gap: 10px;
+    width: 100%;
+    align-items: center;
+    margin-top: 10px;
+    padding: 2px 2px;
+}
+
+.download-card img {
+    width: 200px;
+    height: 150px;
+}
+.download-card mat-icon, a{
+    color: blue;
+}
+
+.download-text {
+    width: 60%;
+    font-size: 10px;
+    color: rgba(0, 0, 0, 0.6);
+    text-align: start;
+}

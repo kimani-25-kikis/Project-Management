@@ -1,1 +1,43 @@
 /* You can add global styles to this file, and also import other style files */
+
+html, body { height: 100%; }
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+.sidenav-container {
+    height: 100vh;
+    display: flex;
+  }
+  
+  mat-sidenav {
+    width: 250px;
+    background: #f4f4f4;
+    padding: 20px;
+  }
+  
+  mat-toolbar {
+    display: flex;
+    justify-content: space-between;
+    padding: 10px 20px;
+  }
+  
+  .stat-card {
+    background: #fff;
+    padding: 20px;
+    border-radius: 10px;
+    text-align: center;
+    box-shadow: 2px 2px 10px rgba(0,0,0,0.1);
+  }
+  .active {
+    font-weight: bold;
+    color: blue;
+  }
+  ::ng-deep mat-expansion-panel {
+    background-color: transparent !important; /* Removes background */
+    box-shadow: none !important; /* Removes shadow */
+    border: none !important; /* Removes border */
+  }
+  ::ng-deep mat-expansion-panel {
+    background: none !important;
+    box-shadow: none !important;
+    border: none !important;
+  }
+    

@@ -1,0 +1,200 @@
+<div>
+    <div class="nav">
+      <h3>Dashboard</h3>
+      <h3 class="breadcrumb">🏠 Home > Dashboard2</h3>
+    </div>
+      
+      <div class="dashboard">
+        <!-- Chart Section -->
+        <div class="chart mt-3">
+            <div class="stat-card">
+                <h3>Project Survey</h3>
+                <canvas id="chartCanvas"></canvas>
+            </div>
+        </div>
+    
+        <!-- Cards Section -->
+        <div class="cards mt-3">
+            <div class="stats">
+                <div class="stat-card">
+                  <h3>Earning</h3>
+                  <p>$20,125</p>
+                  <canvas id="earningsChart"></canvas> 
+                </div>
+                <div class="stat-card">
+                  <h3>New Clients</h3>
+                  <p>129</p>
+                  <canvas id="clientsChart"></canvas> 
+                </div>
+            </div>
+            
+            <!-- Download Reports Card -->
+            <div class="stat-card download-card">
+              <img src="download_reports.png"/>
+              <div class="download_text">
+                  <p>Download Reports</p>
+                  <p>Download employee salary reports.</p>
+                  <button type="button" class="btn btn-primary d-flex align-items-center">
+                    <span class="me-2">Download</span>
+                    <mat-icon>download</mat-icon>
+                </button>
+                
+              </div>
+               
+            </div>
+        </div>
+      </div>
+
+      <div class="card mt-3">
+        <div class="card-body ">
+            <div class="d-flex flex-row justify-content-between">
+                <p>Product Report</p>
+                <div class="dropdown">
+                    <mat-icon class="dropdown-toggle" data-bs-toggle="dropdown">more_vert</mat-icon>
+                    <ul class="dropdown-menu">
+                        <li>Refresh reports</li>
+                      </ul>
+                </div>
+            </div>
+            <div class="container">
+                <div class="row">
+                    <!-- First column (25%) -->
+                    <div class="col-12 col-md-3 p-3">
+                        <p class="fs-3">$117,289</p>
+                        <p class="text-success fs-4">Total Income</p>
+                        <p class="fs-6 pb-3">This is the total income from the projects done.</p>
+            
+                        <p class="fs-3">$65,984</p>
+                        <p class="text-warning fs-4">Total Expense</p>
+                        <p class="fs-6 pb-3">This is the total expenses incurred from the projects done.</p>
+                    </div>
+            
+                    <!-- Second column (40%) -->
+                    <div class="col-12 col-md-5 p-3">
+                        <p class="fs-5 fw-bold">Country Wise Sales</p>
+                        <div class="d-flex align-items-center">
+                            <span class="me-3">India</span>
+                            <div class="progress flex-grow-1 me-3" style="height: 5px;">
+                                <div class="progress-bar" style="width: 40%;"></div>
+                            </div>
+                            <span class="fw-bold">154</span>
+                        </div>
+                        <div class="d-flex align-items-center">
+                            <span class="me-3">USA</span>
+                            <div class="progress flex-grow-1 me-3" style="height: 5px;">
+                                <div class="progress-bar bg-success" style="width: 90%;"></div>
+                            </div>
+                            <span class="fw-bold">423</span>
+                        </div>
+                        <div class="d-flex align-items-center">
+                            <span class="me-3">Sri Lanka</span>
+                            <div class="progress flex-grow-1 me-3" style="height: 5px;">
+                                <div class="progress-bar bg-info" style="width: 70%;"></div>
+                            </div>
+                            <span class="fw-bold">265</span>
+                        </div>
+                        <div class="d-flex align-items-center">
+                            <span class="me-3">Australia</span>
+                            <div class="progress flex-grow-1 me-3" style="height: 5px;">
+                                <div class="progress-bar bg-warning" style="width: 50%;"></div>
+                            </div>
+                            <span class="fw-bold">341</span>
+                        </div>
+                        <div class="d-flex align-items-center">
+                            <span class="me-3">Japan</span>
+                            <div class="progress flex-grow-1 me-3" style="height: 5px;">
+                                <div class="progress-bar bg-danger" style="width: 40%;"></div>
+                            </div>
+                            <span class="fw-bold">238</span>
+                        </div>
+                        <div class="d-flex align-items-center">
+                            <span class="me-3">Italy</span>
+                            <div class="progress flex-grow-1 me-3" style="height: 5px;">
+                                <div class="progress-bar bg-secondary" style="width: 38%;"></div>
+                            </div>
+                            <span class="fw-bold">153</span>
+                        </div>
+                    </div>
+            
+                    <!-- Third column (35%) -->
+                    <div class="col-12 col-md-4 p-3">
+                        <div style="width: 200px; height: 200px; margin: auto;">
+                            <canvas id="doughnutChart"></canvas>
+                        </div>
+                        <div class="mt-2">
+                            <table class="table table-borderless">
+                                <tbody id="chartLegend">
+                                    
+                                    <!-- Labels will be inserted dynamically here -->
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="card mt-3 mx-4 col-12 col-md-7 ">
+            <div class="card-body">
+                <div class="d-flex flex-row justify-content-between">
+                    <p>Invoices</p>
+                    <div class="dropdown">
+                        <mat-icon class="dropdown-toggle" data-bs-toggle="dropdown">more_vert</mat-icon>
+                        <ul class="dropdown-menu">
+                            <li>Refresh table</li>
+                          </ul>
+                    </div>
+                </div>
+                <table class="table">
+                    <thead>
+                      <tr>
+                        <th>Invoice No</th>
+                        <th>Client Name</th>
+                        <th>Due Date</th>
+                        <th>Status</th>
+                        <th>Total</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr>
+                        <td class="text-primary">#IN7865</td>
+                        <td>John Doe</td>
+                        <td class="text-secondary">12/05/2016</td>
+                        <td><span class="badge bg-success">Paid</span></td>
+                        <td>$500</td>
+                      </tr>
+                      <tr>
+                        <td class="text-primary">#IN7867</td>
+                        <td>Abdikadir Hausa</td>
+                        <td class="text-secondary">12/06/2016</td>
+                        <td><span class="badge bg-secondary">Not paid</span></td>
+                        <td>$200</td>
+                      </tr>
+                      <tr>
+                        <td class="text-primary">#IN7861</td>
+                        <td>Hassan M</td>
+                        <td class="text-secondary">12/01/2016</td>
+                        <td><span class="badge bg-danger">Cancelled</span></td>
+                        <td>$400</td>
+                      </tr>
+                    </tbody>
+                  </table>
+    
+            </div>
+          </div>
+          <div class="card mt-3 col-12 col-md-4 p-3">
+            <div class="card-body">
+                Average Daily Bill
+                <p class="h3">129 Dolars<span class="text-secondary fs-6">(Average)</span></p>
+                <div>
+                    <canvas id="dolarCanvas"></canvas>
+                </div>
+            </div>
+          </div>
+      </div>
+      
+    </div>
+    

@@ -1,0 +1,72 @@
+<div>
+    <p class="h4">Add Projects</p>
+
+    <div class="card bg-white">
+        <div class="card-body">
+            <p class="h5">Add Projects</p>
+
+            <div >
+                
+                <form action="/action_page.php" class="d-flex flex-wrap justify-content-center align-items-center mt-2">
+                    <div class="form-floating mt-3 mb-3 w-50 p-2">
+                        <input type="text" class="form-control" id="projid" placeholder="Project ID" name="projid">
+                        <label for="projid">Project ID</label>
+                    </div>
+                    
+                    <div class="form-floating mt-3 mb-3 w-50">
+                        <input type="text" class="form-control" id="projtitle" placeholder="Project Title" name="projtitle">
+                        <label for="projtitle" class="form-label">Project Title:</label>
+                    </div>
+                    <div class="mb-3 w-50 px-4 px-md-2">
+                        <label for="department" class="form-label">Department</label>
+                         <select class="form-select" id="department" name="department">
+                            <option>IT</option>
+                            <option>Hospitality</option>
+                            <option>Engineering</option>
+                            <option>Construction</option>
+                        </select>
+                    </div>
+                    <div class="mb-3 w-50 px-4 px-md-2">
+                        <label for="priority" class="form-label">Project Priority</label>
+                         <select class="form-select" id="priority" name="priority">
+                            <option>High</option>
+                            <option>Medium</option>
+                            <option>Low</option>
+                        </select>
+                    </div>
+                    <div class="form-floating mt-3 mb-3 w-50 p-2">
+                        <input type="text" class="form-control" id="client" placeholder="Client Name" name="client">
+                        <label for="client" class="form-label">Client Name:</label>
+                    </div>
+                    <div class="form-floating mt-3 mb-3 w-50">
+                        <input type="number" class="form-control" id="price" placeholder="Project Price" name="price">
+                        <label for="price" class="form-label">Project Price($):</label>
+                    </div>
+                    <div class="mb-3 w-50 px-4 px-md-2">
+                        <label for="startdate" class="form-label">Project Start Date:</label>
+                        <input type="date" class="form-control" id="startdate" placeholder="Project Start Date" name="startdate">
+                    </div>
+                    <div class="mb-3 w-50 px-4 px-md-2">
+                        <label for="projtitle" class="form-label">Project End Date:</label>
+                        <input type="date" class="form-control" id="enddate" placeholder="Project End Date" name="enddate">
+                    </div>
+                    <div class="mb-3 w-100 px-4 px-md-2">
+                        <label for="team" class="form-label">Team</label>
+                         <select class="form-select" id="team" name="team">
+                            <option>Developers</option>
+                            <option>Engineers</option>
+                            <option>Architects</option>
+                        </select>
+                    </div>
+                    
+                    <div class="w-100 text-center">
+                        <button type="submit" class="btn btn-primary">Submit</button>
+                    </div>
+                </form>
+                
+                
+               
+            </div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,16 @@
+.main {
+  display: flex;
+  flex-direction: row;
+   height: 100%;
+  }
+  
+  app-sidebar {
+    width: 230px; /* Sidebar width */
+  }
+  
+  .content {
+    flex-grow: 1; /* Takes remaining space */
+    padding: 20px;
+    width: 70%;
+  }
+  
