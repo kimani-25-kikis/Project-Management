@@ -65,3 +65,102 @@ CREATE TABLE holiday (
     approval_status ENUM('Pending', 'Approved', 'Rejected') DEFAULT 'Pending',
     details TEXT NOT NULL
 );
+CREATE DATABASE holiday_manager;
+
+USE holiday_manager;
+
+CREATE TABLE holidays (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    name VARCHAR(100) NOT NULL,
+    shift VARCHAR(50) NOT NULL,
+    date DATE NOT NULL,
+    type VARCHAR(50) NOT NULL,
+    created_by VARCHAR(50) NOT NULL,
+    creation_date DATE NOT NULL,
+    approval_status ENUM('Approved', 'Pending') DEFAULT 'Pending',
+    details TEXT
+);
+CREATE DATABASE project_manager;
+
+USE project_manager;
+
+CREATE TABLE projects (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    name VARCHAR(100) NOT NULL,
+    status ENUM('Active', 'Inactive', 'Completed') NOT NULL DEFAULT 'Active',
+    created_by VARCHAR(50) NOT NULL,
+    last_updated DATETIME NOT NULL,
+    created_date DATE NOT NULL,
+    messages_count INT DEFAULT 0,
+    commits_count INT DEFAULT 0,
+    deadline DATE NOT NULL,
+    version VARCHAR(20),
+    team VARCHAR(100),
+    progress INT DEFAULT 0,
+    description TEXT
+);
+
+CREATE TABLE clients (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    project_id INT,
+    name VARCHAR(100) NOT NULL,
+    email VARCHAR(100) NOT NULL,
+    payment_status ENUM('Pending', 'Completed') DEFAULT 'Pending',
+    FOREIGN KEY (project_id) REFERENCES projects(id)
+);
+
+CREATE TABLE messages (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    project_id INT,
+    sender VARCHAR(50) NOT NULL,
+    content TEXT NOT NULL,
+    timestamp DATETIME NOT NULL,
+    FOREIGN KEY (project_id) REFERENCES projects(id)
+);
+
+-- Sample data
+INSERT INTO projects (name, status, created_by, last_updated, created_date, messages_count, commits_count, deadline, version, team, progress, description) VALUES
+('Wordpress Website', 'Active', 'Admin', '2021-08-22 12:15:57', '2021-08-22', 277, 175, '2021-09-22', 'v2.5.2', '++++++', 50, 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Consequatur iure odio, fugiat error incidunt voluptas temporibus dolor, neque quasi corrupti quam minima iusto? Libero perspiciatis velit nostrum corporis fugit veritatis. Lorem ipsum dolor sit amet consectetur adipisicing elit. Rerum at unde laborum iste quos ex consectetur necessitatibus voluptate exercitationem deserunt, possimus nulla beatae maxime hic debitis eos voluptatum similique dolores. Lorem ipsum, dolor sit amet consectetur adipisicing elit. Provident rerum et ut ipsum delectus est ratione sint saepe, ullam suscipit voluptas itaque quas quisquam magnam in eligendi adipisci. Sunt, libero.');
+
+
+INSERT INTO clients (project_id, name, email, payment_status) VALUES
+(1, 'xyx.pvt.ltd', 'xyz@gmail.com', 'Completed');
+
+INSERT INTO messages (project_id, sender, content, timestamp) VALUES
+(1, 'Airi Satou', 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Necessitatibus assumenda, perferendis tenetur nemo quaerat commodi reprehenderit laudantium pariatur inventore ducimus.', '2025-03-19 10:00:00');
+
+USE project_manager;
+
+CREATE TABLE projects (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    name VARCHAR(100) NOT NULL,
+    status ENUM('New', 'Running', 'On Hold', 'Finished') NOT NULL DEFAULT 'New',
+    open_tasks INT DEFAULT 0,
+    type VARCHAR(50),
+    description TEXT,
+    created_date DATE NOT NULL,
+    team_leader VARCHAR(50),
+    priority ENUM('Low', 'Medium', 'High') DEFAULT 'Medium',
+    deadline DATE NOT NULL,
+    comments_count INT DEFAULT 0,
+    bugs_count INT DEFAULT 0,
+    team VARCHAR(100),
+    progress INT DEFAULT 0
+);
+
+-- Sample data
+INSERT INTO projects (name, status, open_tasks, type, description, created_date, team_leader, priority, deadline, comments_count, bugs_count, team, progress) VALUES
+('Testing', 'Running', 15, 'Website', 'Testing Michalis Add a project', '2024-07-31', 'Michael', 'Medium', '2025-04-22', 41, 11, '+++++++++', 50);
+USE project_manager;
+
+CREATE TABLE users (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    role ENUM('Admin', 'Manager', 'Employee') NOT NULL,
+    email VARCHAR(100) NOT NULL UNIQUE,
+    password VARCHAR(255) NOT NULL, -- Store hashed passwords
+    created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+);
+
+-- Sample user (password: "password123" hashed with password_hash)
+INSERT INTO users (role, email, password) VALUES
+('Admin', 'admin@example.com', '$2y$10$3X9Qz7z5Z5Z5Z5Z5Z5Z5Z5Z5Z5Z5Z5Z5Z5Z5Z5Z5Z5Z5Z5Z5Z5Z5Z5');
